@@ -7,46 +7,94 @@ def main():
     # Section 1: Understanding Assembly Language Basics
     st.header("1. Understanding Assembly Language Basics")
     st.subheader("Low-Level Nature")
-    st.text_area("Explain the low-level nature of assembly programming, focusing on how it directly interacts with hardware:", key="low_level")
+    st.text_area(
+        "Explain the low-level nature of assembly programming, focusing on how it directly interacts with hardware:",
+        key="low_level",
+        placeholder="Assembly is processor-specific, meaning the instructions correspond directly to a particular CPU's instruction set (e.g., x86, ARM, RISC-V)."
+    )
 
     st.subheader("Registers and Memory")
-    st.text_area("Describe the role of registers and memory in assembly programming:", key="registers_memory")
+    st.text_area(
+        "Describe the role of registers and memory in assembly programming:",
+        key="registers_memory",
+        placeholder="Operations in assembly involve the CPU's registers, memory addresses, and hardware peripherals."
+    )
 
     st.subheader("Syntax")
-    st.text_area("Detail the syntax of assembly instructions, including opcodes and operands:", key="syntax")
+    st.text_area(
+        "Detail the syntax of assembly instructions, including opcodes and operands:",
+        key="syntax",
+        placeholder="Instructions typically consist of an opcode (operation code) and operands (e.g., MOV AX, 5 to move the value 5 into register AX)."
+    )
 
     # Section 2: Firmware Development Workflow
     st.header("2. Firmware Development Workflow")
     st.subheader("Specification and Design")
-    st.text_area("Outline the steps to define functionality and select a processor:", key="specification_design")
+    st.text_area(
+        "Outline the steps to define functionality and select a processor:",
+        key="specification_design",
+        placeholder="Define the firmware's functionality and select a processor based on required performance and instruction set."
+    )
 
     st.subheader("Writing Code")
-    st.text_area("Explain how to write code, including hardware initialization and configuration:", key="writing_code")
+    st.text_area(
+        "Explain how to write code, including hardware initialization and configuration:",
+        key="writing_code",
+        placeholder="Common tasks include initializing hardware components, configuring memory-mapped registers, and responding to interrupts."
+    )
 
     st.subheader("Compilation and Assembly")
-    st.text_area("Describe the process of assembling and linking the firmware:", key="compilation_assembly")
+    st.text_area(
+        "Describe the process of assembling and linking the firmware:",
+        key="compilation_assembly",
+        placeholder="The assembler converts the assembly code into machine code, and a linker combines modules to create the firmware image."
+    )
 
     st.subheader("Programming the Device")
-    st.text_area("Detail how to load the firmware into a device's memory:", key="programming_device")
+    st.text_area(
+        "Detail how to load the firmware into a device's memory:",
+        key="programming_device",
+        placeholder="Load the firmware into the device's memory (e.g., flash or EEPROM) using a programmer tool."
+    )
 
     st.subheader("Testing and Debugging")
-    st.text_area("Explain how to debug and test firmware using tools like simulators and oscilloscopes:", key="testing_debugging")
+    st.text_area(
+        "Explain how to debug and test firmware using tools like simulators and oscilloscopes:",
+        key="testing_debugging",
+        placeholder="Use simulators, hardware debuggers, or oscilloscopes to debug timing issues and hardware interactions."
+    )
 
     # Section 3: Key Characteristics of Assembly in Firmware
     st.header("3. Key Characteristics of Assembly in Firmware")
-    st.text_area("List and explain key characteristics such as efficiency, control, and portability:", key="key_characteristics")
+    st.text_area(
+        "List and explain key characteristics such as efficiency, control, and portability:",
+        key="key_characteristics",
+        placeholder="Efficiency: Maximizes performance and minimizes resource usage.\nControl: Direct access to hardware.\nPortability: Limited, as assembly is hardware-specific."
+    )
 
     # Section 4: Common Applications
     st.header("4. Common Applications")
-    st.text_area("Provide examples of where assembly programming is commonly used in firmware:", key="common_applications")
+    st.text_area(
+        "Provide examples of where assembly programming is commonly used in firmware:",
+        key="common_applications",
+        placeholder="Examples: Embedded systems, real-time systems, bootloaders."
+    )
 
     # Section 5: Assembly Language Alternatives
     st.header("5. Assembly Language Alternatives")
-    st.text_area("Discuss alternatives to assembly, like C, and when to use each:", key="alternatives")
+    st.text_area(
+        "Discuss alternatives to assembly, like C, and when to use each:",
+        key="alternatives",
+        placeholder="C is often used for firmware development as it balances control with productivity. Assembly is valuable for performance-critical routines."
+    )
 
     # Conclusion
     st.header("Conclusion")
-    st.text_area("Summarize the value of assembly programming in firmware development:", key="conclusion")
+    st.text_area(
+        "Summarize the value of assembly programming in firmware development:",
+        key="conclusion",
+        placeholder="Assembly provides precise control and efficiency, making it essential for constrained systems and critical routines."
+    )
 
     st.markdown("---")
     st.markdown("### Additional Features")
