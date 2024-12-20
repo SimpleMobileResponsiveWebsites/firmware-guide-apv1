@@ -53,5 +53,64 @@ def main():
     if st.button("Save My Notes"):
         st.success("Your notes have been saved! You can come back anytime to refine them.")
 
+    # Predefined content for guidance
+    st.markdown("## Assembly Programming for Firmware: Predefined Guidance")
+    st.markdown("""
+    Assembly programming for firmware involves writing low-level code that directly interacts with a system's hardware. Firmware resides in a device's non-volatile memory and provides the essential control and interface between the hardware and higher-level software. Assembly language, often used for firmware development, is a human-readable representation of a processor's machine language. Here's an overview of how it works:
+
+    ### 1. Understanding Assembly Language Basics
+    - **Low-Level Nature**: Assembly is processor-specific, meaning the instructions correspond directly to a particular CPU's instruction set (e.g., x86, ARM, RISC-V).
+    - **Registers and Memory**: It involves operations on the CPU's registers, memory addresses, and hardware peripherals.
+    - **Syntax**: Instructions typically consist of an opcode (operation code) and operands (e.g., `MOV AX, 5` to move the value 5 into register AX).
+
+    ### 2. Firmware Development Workflow
+    - **Specification and Design**:
+        - Define the firmware's functionality, including required hardware interfaces and performance constraints.
+        - Select a microcontroller or processor, which determines the assembly instruction set.
+
+    - **Writing Code**:
+        - Use an assembler (e.g., NASM, MASM, or ARM assembler) to write code.
+        - Common tasks include:
+            - Initializing hardware components.
+            - Configuring memory-mapped registers.
+            - Responding to interrupts.
+            - Implementing critical low-level routines.
+        - Example:
+
+        ```asm
+        ; Example for initializing a GPIO pin on ARM Cortex-M
+        LDR R0, =0x40021000 ; Load base address of GPIO port
+        MOV R1, #0x1        ; Set pin mode
+        STR R1, [R0, #0x00] ; Store configuration in mode register
+        ```
+
+    - **Compilation and Assembly**:
+        - The assembler converts the assembly code into machine code (binary instructions).
+        - A linker combines this with other modules or libraries to produce the final firmware image.
+
+    - **Programming the Device**:
+        - Load the firmware into the device's memory (e.g., flash or EEPROM) using a programmer tool.
+
+    - **Testing and Debugging**:
+        - Debugging tools like simulators, hardware debuggers, or oscilloscopes help identify and fix issues.
+        - Emphasis is placed on timing, resource constraints, and hardware interactions.
+
+    ### 3. Key Characteristics of Assembly in Firmware
+    - **Efficiency**: Maximizes performance and minimizes resource usage, critical for constrained systems (e.g., small RAM/ROM).
+    - **Control**: Direct access to hardware, making it ideal for initializing hardware and writing critical sections like interrupt service routines.
+    - **Portability**: Limited, as assembly is hardware-specific. Changes in the microcontroller often require a rewrite.
+
+    ### 4. Common Applications
+    - Embedded systems (e.g., IoT devices, sensors, and controllers).
+    - Real-time systems with tight constraints on timing and performance.
+    - Bootloaders, which initialize hardware before the main firmware runs.
+
+    ### 5. Assembly Language Alternatives
+    - While assembly provides precise control, higher-level languages like C are often used for most firmware development, as they balance control with productivity. However, assembly is still valuable for:
+        - Performance-critical routines.
+        - Hardware initialization and low-level drivers.
+    - In modern development, assembly is often integrated with C code to take advantage of both worlds. For example, a C program may use inline assembly for tasks requiring precise control.
+    """)
+
 if __name__ == "__main__":
     main()
